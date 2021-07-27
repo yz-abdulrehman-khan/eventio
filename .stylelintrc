@@ -9,7 +9,8 @@
   "rules" : {
     "font-family-no-missing-generic-family-keyword": [
       true,
-      { "ignoreFontFamilies": ["Hind", "Playfair"] },
+      { "ignoreFontFamilies": ["Hind", "Playfair", "Playfair Display"] },
     ],
+    "value-keyword-case": null
   },
 }

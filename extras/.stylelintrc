@@ -1,4 +1,4 @@
-# This file is used by the stylelint CLI to lint CSS files.
+# This file is used by the stylelint CLI to lint SCSS + CSS files.
 # The .stylelintrc file in the project root directory is configured to lint
 # CSS in JS within Styled Components
 {
