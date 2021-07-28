@@ -1,0 +1,43 @@
+import {storeRefreshToken, storeAuthToken} from './local-storage'
+import {userInitialState} from './initialState'
+import {ACTIONS} from './constants'
+
+/**
+ * Auth reducer
+ *
+ * @function
+ * @param {object} state
+ * @param {object} action
+ */
+const authReducer = (
+  state: typeof userInitialState,
+  action: {user: typeof userInitialState; type: ACTIONS},
+) => {
+  if (action.type === ACTIONS.LOGIN) console.log(action.user, 'Ive got')
+  switch (action.type) {
+    case ACTIONS.LOGIN: {
+      const {id, firstName, lastName, email} = action.user || {}
+      return {
+        ...state,
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        isLogged: true,
+      }
+    }
+    case ACTIONS.LOGOUT:
+      storeRefreshToken('')
+      storeAuthToken('')
+
+      return {
+        ...state,
+        ...userInitialState,
+      }
+
+    default:
+      return state
+  }
+}
+
+export default authReducer
