@@ -101,3 +101,7 @@ export const createDate = (date: string, time: string): Date => {
 
   return new Date(year, month - 1, day, hour, minute)
 }
+
+export const getUserInitials = (firstName = '', lastName = ''): string => {
+  return `${firstName.charAt(0)}${lastName.charAt(0)}`
+}

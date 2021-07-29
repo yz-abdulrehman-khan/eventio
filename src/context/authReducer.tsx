@@ -1,3 +1,4 @@
+import {useHistory} from 'react-router-dom'
 import {storeRefreshToken, storeAuthToken} from './local-storage'
 import {userInitialState} from './initialState'
 import {ACTIONS} from './constants'
@@ -11,8 +12,9 @@ import {UserInterface, User} from './initialState'
  */
 const authReducer = (
   state: typeof userInitialState,
-  {user: {user}, type}: {user: UserInterface; type: ACTIONS},
+  {user: {user} = {}, type}: {user: UserInterface; type: ACTIONS},
 ): User => {
+  const history = useHistory()
   switch (type) {
     case ACTIONS.LOGIN: {
       const {id, firstName, lastName, email} = user || {}
@@ -30,7 +32,7 @@ const authReducer = (
     case ACTIONS.LOGOUT:
       storeRefreshToken('')
       storeAuthToken('')
-
+      history.push('/')
       return {
         ...state,
         ...userInitialState,

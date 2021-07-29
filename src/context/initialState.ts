@@ -11,7 +11,7 @@ export type User = {
 }
 
 export interface UserInterface {
-  user: User
+  user?: User
 }
 
 export const userInitialState: User = {

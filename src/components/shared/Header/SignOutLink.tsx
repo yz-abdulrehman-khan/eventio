@@ -1,21 +1,37 @@
+import {useContext, useState} from 'react'
 import styled from 'styled-components'
-// import { useDispatch } from 'react-redux'
-// import { signOut } from '../../../store/auth/actions'
-// import Router from 'next/router'
+import {AuthContext} from '../../../context/authContext'
+import {getUserInitials} from '../../../utils/helper-functions'
+import {ACTIONS} from '../../../context/constants'
+import {BP, COLOR} from '../../../styles/constants'
 
-const SignOutLink = () => {
-  // const dispatch = useDispatch()
+const SignOutLink = (): JSX.Element => {
+  const {state, dispatch} = useContext(AuthContext)
+  const {firstName, lastName} = state
+  const [showMenu, setShowMenu] = useState(false)
 
-  // const handleClick = () => {
-  //   dispatch(signOut())
-  //   Router.push('/')
-  // }
-
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu)
+  }
+  const handleLogout = () => dispatch({type: ACTIONS.LOGOUT})
+  const Avatar = () => (
+    <AvatarWrapper onClick={handleShowMenu}>{getUserInitials(firstName, lastName)}</AvatarWrapper>
+  )
   return (
-    <Container
-    // onClick={handleClick}
-    >
-      SIGN OUT
+    <Container>
+      <Avatar />
+      <Menu>
+        <LinkButton onClick={handleShowMenu}>
+          <Name>{`${firstName} ${lastName}`}</Name>
+          <Icon src="/icons/dropdown.svg" />
+        </LinkButton>
+        {showMenu && (
+          <Dropdown>
+            <MenuButton>Profile</MenuButton>
+            <MenuButton onClick={handleLogout}>Log out</MenuButton>
+          </Dropdown>
+        )}
+      </Menu>
     </Container>
   )
 }
@@ -24,6 +40,93 @@ const Container = styled.span`
   font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`
+export const AvatarWrapper = styled.div`
+  display: flex;
+  border-radius: 50%;
+  background-color: ${COLOR.GREY_BUTTON};
+  width: 5rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: ${BP.TABLET}) {
+    margin-right: 0.8rem;
+  }
+  @media (max-width: ${BP.MOBILE}) {
+    margin-right: 1rem;
+  }
+`
+
+export const Menu = styled.div`
+  position: relative;
+  color: ${COLOR.GREY_TEXT_LIGHT};
+  @media (min-width: ${BP.TABLET}) {
+    margin-left: 1rem;
+  }
+`
+
+const LinkButton = styled.div`
+  background-color: unset;
+  letter-spacing: 1px;
+  font-family: Hind;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    color: ${COLOR.GREY_TEXT_DARK};
+  }
+
+  &:focus {
+    outline: 0;
+  }
+`
+
+const Dropdown = styled.div`
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  z-index: 10;
+  width: 16rem;
+  min-height: 6rem;
+  background: #fff;
+  box-shadow: 0 0.3125rem 0.9375rem 0 rgb(0 0 0 / 20%);
+  border-radius: 0.875rem;
+  @media (min-width: ${BP.TABLET}) {
+    height: 3rem;
+  }
+`
+
+const MenuButton = styled.div`
+  height: 50%;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-family: Hind;
+  padding-left: 0.8rem;
+  &:hover {
+    cursor: pointer;
+    color: ${COLOR.GREY_TEXT_DARK};
+  }
+`
+
+const Name = styled.span`
+  display: none;
+  @media (min-width: ${BP.TABLET}) {
+    display: inline-block;
+  }
+`
+
+const Icon = styled.img`
+  display: none;
+  vertical-align: middle;
+  @media (min-width: ${BP.TABLET}) {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
 `
 
 export default SignOutLink
