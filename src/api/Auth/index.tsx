@@ -12,8 +12,6 @@ export default {
     if (refreshToken) storeRefreshToken(refreshToken)
     return {
       user: response.data as User,
-      // accessToken: authToken as string,
-      // refreshToken: refreshToken as string,
     }
   },
 
@@ -23,7 +21,6 @@ export default {
     if (authToken) storeAuthToken(authToken)
     return {
       user: response.data as User,
-      // accessToken: response.headers['authorization'] as string,
     }
   },
 }

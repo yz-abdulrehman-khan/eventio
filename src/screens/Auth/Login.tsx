@@ -5,9 +5,6 @@ import Input from '../../components/shared/Input'
 import Button from '../../components/shared/Button'
 import {useFormik} from 'formik'
 import {COLOR, BP} from '../../styles/constants'
-// import { RootState } from '../../../store/rootReducer'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { signIn, clearFailure } from '../../../store/auth/actions'
 import validate from './forms/validate'
 import SignUpLink from '../../components/shared/Header/SignUpLink'
 import {AuthContext} from '../../context/authContext'
@@ -37,8 +34,8 @@ const SignInForm = (): JSX.Element => {
         setLoading(true)
 
         const loginResponse = await Api.auth.signIn(email, password)
-        console.log(loginResponse, 'sleak')
         dispatch({type: ACTIONS.LOGIN, user: loginResponse})
+
         history.push('/events')
       } catch (err) {
         setLoginError(true)

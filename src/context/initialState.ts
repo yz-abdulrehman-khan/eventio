@@ -10,6 +10,10 @@ export type User = {
   isLogged: boolean
 }
 
+export interface UserInterface {
+  user: User
+}
+
 export const userInitialState: User = {
   id: null,
   firstName: 'Darth',

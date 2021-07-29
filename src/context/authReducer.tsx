@@ -1,7 +1,7 @@
 import {storeRefreshToken, storeAuthToken} from './local-storage'
 import {userInitialState} from './initialState'
 import {ACTIONS} from './constants'
-
+import {UserInterface, User} from './initialState'
 /**
  * Auth reducer
  *
@@ -11,12 +11,12 @@ import {ACTIONS} from './constants'
  */
 const authReducer = (
   state: typeof userInitialState,
-  action: {user: typeof userInitialState; type: ACTIONS},
-) => {
-  if (action.type === ACTIONS.LOGIN) console.log(action.user, 'Ive got')
-  switch (action.type) {
+  {user: {user}, type}: {user: UserInterface; type: ACTIONS},
+): User => {
+  switch (type) {
     case ACTIONS.LOGIN: {
-      const {id, firstName, lastName, email} = action.user || {}
+      const {id, firstName, lastName, email} = user || {}
+
       return {
         ...state,
         id: id,
@@ -26,6 +26,7 @@ const authReducer = (
         isLogged: true,
       }
     }
+
     case ACTIONS.LOGOUT:
       storeRefreshToken('')
       storeAuthToken('')
