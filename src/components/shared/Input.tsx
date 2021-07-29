@@ -17,6 +17,7 @@ const Input: FC<Props> = ({name, label, submitFailed, validationMessage, ...inpu
       {...inputProps}
       type={inputProps.type || 'text'}
     />
+    <InputErrorMessage>{validationMessage}</InputErrorMessage>
     <label htmlFor={name} data-content={label}>
       <span>{label}</span>
     </label>
@@ -64,6 +65,13 @@ const Container = styled.div<{redBorder?: boolean}>`
     transform: translateY(-2.5rem);
     opacity: 0.7;
   }
+`
+export const InputErrorMessage = styled.span`
+  display: block;
+  text-align: left;
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  color: ${COLOR.RED};
 `
 
 export default Input

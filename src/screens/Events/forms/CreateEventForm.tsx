@@ -8,6 +8,7 @@ import Api from '../../../api'
 import {CARD_SHADOW, BP} from '../../../styles/constants'
 import {createDate} from '../../../utils/helper-functions'
 import {getAuthToken} from '../../../context/local-storage'
+import validate from './validate'
 
 export type FormValues = typeof initialValues
 
@@ -25,7 +26,7 @@ const CreateEventForm = (): JSX.Element => {
 
   const formik = useFormik({
     initialValues,
-    // validate,
+    validate,
     onSubmit: async ({date, time, capacity, ...values}) => {
       setSubmitting(true)
       console.log(values, 'values')
@@ -89,7 +90,13 @@ const CreateEventForm = (): JSX.Element => {
           validationMessage={touched.capacity ? errors.capacity : undefined}
         />
 
-        <SubmitButton size="big" color="green" type="submit" loading={submitting}>
+        <SubmitButton
+          size="big"
+          color="green"
+          type="submit"
+          loading={submitting}
+          disabled={!!Object.keys(errors).length}
+        >
           CREATE NEW EVENT
         </SubmitButton>
       </form>

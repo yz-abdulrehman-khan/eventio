@@ -27,7 +27,6 @@ const SignOutLink = (): JSX.Element => {
         </LinkButton>
         {showMenu && (
           <Dropdown>
-            <MenuButton>Profile</MenuButton>
             <MenuButton onClick={handleLogout}>Log out</MenuButton>
           </Dropdown>
         )}
@@ -38,7 +37,7 @@ const SignOutLink = (): JSX.Element => {
 
 const Container = styled.span`
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -71,7 +70,6 @@ export const Menu = styled.div`
 const LinkButton = styled.div`
   background-color: unset;
   letter-spacing: 1px;
-  font-family: Hind;
   text-transform: uppercase;
 
   &:hover {
@@ -90,22 +88,25 @@ const Dropdown = styled.div`
   top: 4rem;
   z-index: 10;
   width: 16rem;
-  min-height: 6rem;
+  height: 5rem;
   background: #fff;
   box-shadow: 0 0.3125rem 0.9375rem 0 rgb(0 0 0 / 20%);
   border-radius: 0.875rem;
-  @media (min-width: ${BP.TABLET}) {
-    height: 3rem;
+  @media (max-width: ${BP.TABLET}) {
+    top: 3rem;
+  }
+  @media (max-width: ${BP.MOBILE}) {
+    top: 3rem;
+    width: 10rem;
+    height: 4rem;
   }
 `
 
 const MenuButton = styled.div`
-  height: 50%;
+  height: 100%;
   display: flex;
   align-items: center;
   text-transform: capitalize;
-  font-size: 1.4rem;
-  font-family: Hind;
   padding-left: 0.8rem;
   &:hover {
     cursor: pointer;

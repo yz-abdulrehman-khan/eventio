@@ -93,7 +93,7 @@ export const filterEventsByCategory = (
   })
 }
 
-/* Creating date */
+/* Creating date from Date and Time String*/
 
 export const createDate = (date: string, time: string): Date => {
   const [year, month, day] = date.split('-').map(item => Number(item))
@@ -102,6 +102,41 @@ export const createDate = (date: string, time: string): Date => {
   return new Date(year, month - 1, day, hour, minute)
 }
 
+/*  Ends */
+
+/** Creating User Initails for Avatar Image */
+
 export const getUserInitials = (firstName = '', lastName = ''): string => {
   return `${firstName.charAt(0)}${lastName.charAt(0)}`
 }
+
+/** Ends */
+
+/** Time and Date Validation */
+
+export const validateDate = (dateString: string): boolean => {
+  const parts = dateString.split('-').filter(part => !!part)
+  if (parts.length !== 3) return false
+
+  const [year, month, day] = parts.map(part => Number(part))
+
+  if (isNaN(year) || year < 1970 || year > 2100) return false
+  if (isNaN(month) || month < 1 || month > 12) return false
+  if (isNaN(day) || day < 1 || day > 31) return false
+
+  return true
+}
+
+export const validateTime = (timeString: string): boolean => {
+  const parts = timeString.split(':')
+  if (parts.length !== 2) return false
+
+  const [hour, minute] = parts.map(part => Number(part))
+
+  if (isNaN(hour) || hour < 0 || hour > 23) return false
+  if (isNaN(minute) || minute < 0 || minute > 59) return false
+
+  return true
+}
+
+/*  Ends */
