@@ -19,7 +19,7 @@ All of these must be available in your PATH. To verify things are set up properl
 
 ## Setup
     git clone https://github.com/Abdul-Rehman-Khan/eventio.git
-    cd bookshelf
+    cd eventio
 just run a follwing commands to get set up:
 ```shell
 npm install
