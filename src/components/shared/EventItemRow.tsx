@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import {FC} from 'react'
+import styled from 'styled-components'
 import {EventItem} from '../../api/Events/types'
 import {COLOR, CARD_SHADOW, BP} from '../../styles/constants'
 import EventItemButton from './EventItemButton'
@@ -7,9 +7,11 @@ import {formatDate} from '../../utils/helper-functions'
 
 interface Props {
   eventItem: EventItem
+  action?: boolean
+  setActionTriggered?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const EventItemRow = ({eventItem, setActionTriggered, action}) => (
+const EventItemRow: FC<Props> = ({eventItem, setActionTriggered, action}) => (
   <Container>
     <Title>{eventItem.title}</Title>
     <Description>{eventItem.description}</Description>

@@ -1,8 +1,6 @@
 import Header from '../../components/shared/Header'
 import {COLOR, BP, HEADER_HEIGHT} from '../../styles/constants'
 import styled from 'styled-components'
-
-// import Authorize from '../components/shared/Authorize'
 import CreateEventForm from './forms/CreateEventForm'
 
 const CreateEventPage = () => (

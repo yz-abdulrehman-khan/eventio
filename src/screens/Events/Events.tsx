@@ -20,7 +20,7 @@ const EventsPage = () => {
 
   const [events, setEvents] = useState<EventItem[]>([])
   const [filteredEvents, setFilteredEvents] = useState<EventItem[]>([])
-  const [viewMode, setModeView] = useState('grid')
+  const [viewMode, setModeView] = useState<EventListViewMode>('grid')
   const [loading, setLoading] = useState(false)
   const [currentCategory, setCategory] = useState<EventCategory>('all')
   const [action, setActionTriggered] = useState(false)

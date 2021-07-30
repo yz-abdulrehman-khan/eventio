@@ -1,8 +1,8 @@
-import {useContext, lazy, Suspense, useEffect, useState, FC} from 'react'
+import {useContext, lazy, Suspense, useEffect, useState} from 'react'
 import {AuthContext} from '../context/authContext'
 import {getRefreshToken} from '../context/local-storage'
 import Api from '../api/index'
-// import PageLoader from '../PageLoader'
+import PageLoader from '../components/shared/FullPageLoader'
 import {ACTIONS} from '../context/constants'
 
 const AuthenticatedApp = lazy(() => import(/* webpackPrefetch: true */ './authenticated-app'))
@@ -35,11 +35,11 @@ const App = (): JSX.Element => {
   return (
     <>
       {toRender ? (
-        <Suspense fallback={'loading com'}>
+        <Suspense fallback={<PageLoader />}>
           {isLogged ? <AuthenticatedApp /> : <UnauthenticatedApp />}
         </Suspense>
       ) : (
-        'Loading'
+        <PageLoader />
       )}
     </>
   )

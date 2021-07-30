@@ -4,22 +4,15 @@ import {getEventButtonConfig} from '../../utils/helper-functions'
 import {EventItem} from '../../api/Events/types'
 import Api from '../../api'
 import {AuthContext} from '../../context/authContext'
-// import {useContext, useState} from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { RootState } from '../store/rootReducer'
-// import { leaveEvent, joinEvent } from '../store/events/actions'
-// import EventItem from '../api/types/EventItem'
 import {getAuthToken} from '../../context/local-storage'
-import {useEffect} from 'react'
+
 interface Props {
   eventItem: EventItem
-  action?: any
-  setActionTriggered?: any
+  action?: boolean
+  setActionTriggered?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const EventItemButton: FC<Props> = ({eventItem, action: actionTriggered, setActionTriggered}) => {
-  // const dispatch = useDispatch()
-  // const user = useSelector((state: RootState) => state.auth.user)
   const {
     state: {id: userID},
   } = useContext(AuthContext)

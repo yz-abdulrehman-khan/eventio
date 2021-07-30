@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
-const GoBackLink = () => (
+const GoBackLink = (): JSX.Element => (
   <Link to="/events">
     <a>
       <Container>

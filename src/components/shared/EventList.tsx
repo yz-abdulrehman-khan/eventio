@@ -1,23 +1,31 @@
+import {FC} from 'react'
 import styled, {css} from 'styled-components'
 import EventItemRow from './EventItemRow'
-// import { useSelector } from 'react-redux'
-// import { RootState } from '../store/rootReducer'
 import EventItemCard from './EventItemCard'
-// import EventListViewMode from '../types/EventListViewMode'
-// import filterEventsByCategory from '../utils/filterEventsByCategory'
 import {BP} from '../../styles/constants'
 import {EventListViewMode} from '../../utils/helper-functions'
+import Loader from '../shared/Loader'
+import {EventItem} from '../../api/Events/types'
 
-const EventList = ({events, loading, viewMode, action, setActionTriggered}): JSX.Element => {
-  // const {itemsLoading, items, category, viewMode} = useSelector((state: RootState) => state.events)
-  // const viewMode = 'grid'
+interface Props {
+  events: EventItem[]
+  loading: boolean
+  viewMode: EventListViewMode
+  action?: boolean
+  setActionTriggered?: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const EventList: FC<Props> = ({
+  events,
+  loading,
+  viewMode,
+  action,
+  setActionTriggered,
+}): JSX.Element => {
   return (
-    <Container
-      // viewMode={viewMode}
-      viewMode={viewMode}
-    >
+    <Container viewMode={viewMode}>
       {loading ? (
-        <img src="/icons/spinner-dark.svg" alt="Loading ..." />
+        <Loader />
       ) : (
         events.map(eventItem =>
           viewMode === 'grid' ? (

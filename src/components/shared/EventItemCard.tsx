@@ -7,9 +7,11 @@ import {formatDate} from '../../utils/helper-functions'
 
 interface Props {
   eventItem: EventItem
+  action?: boolean
+  setActionTriggered?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const EventItemCard = ({eventItem, setActionTriggered, action}) => (
+const EventItemCard: FC<Props> = ({eventItem, setActionTriggered, action}) => (
   <Container>
     <StartDate>{formatDate(eventItem.startsAt)}</StartDate>
     <Title>{eventItem.title}</Title>

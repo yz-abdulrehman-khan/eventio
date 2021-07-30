@@ -1,6 +1,7 @@
 import {FC, ReactNode} from 'react'
 import styled, {css} from 'styled-components'
 import {COLOR} from '../../styles/constants'
+import Loader from './Loader'
 
 export type ButtonColor = 'green' | 'red' | 'grey'
 export type ButtonSize = 'big' | 'small'
@@ -34,7 +35,7 @@ const Button: FC<Props> = ({
     onClick={!disabled ? onClick : undefined}
     disabled={disabled}
   >
-    {loading ? <img src="/icons/spinner-light.svg" alt="Loading ..." /> : children}
+    {loading ? <Loader /> : children}
   </Container>
 )
 

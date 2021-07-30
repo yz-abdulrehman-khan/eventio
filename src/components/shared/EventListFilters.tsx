@@ -1,6 +1,16 @@
+import {FC} from 'react'
 import styled from 'styled-components'
 import {COLOR, BP} from '../../styles/constants'
-import {EventCategory} from '../../utils/helper-functions'
+import {EventCategory, EventListViewMode} from '../../utils/helper-functions'
+
+interface Props {
+  onFilterChange: any
+  currentCategory: EventCategory
+  viewModeClickHandler: any
+  viewMode: EventListViewMode
+  action?: boolean
+  setActionTriggered?: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const CATEGORIES: Array<{key: EventCategory; label: string}> = [
   {
@@ -17,7 +27,12 @@ const CATEGORIES: Array<{key: EventCategory; label: string}> = [
   },
 ]
 
-const EventListFilters = ({onFilterChange, currentCategory, viewModeClickHandler, viewMode}) => {
+const EventListFilters: FC<Props> = ({
+  onFilterChange,
+  currentCategory,
+  viewModeClickHandler,
+  viewMode,
+}): JSX.Element => {
   return (
     <Container>
       <ul>
