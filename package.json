@@ -1,6 +1,7 @@
 {
   "name": "eventio",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Abdul Rehman Khan <yz.abdulrehman.khan@gmail.com>",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

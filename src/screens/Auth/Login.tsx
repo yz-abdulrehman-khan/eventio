@@ -47,7 +47,6 @@ const SignInForm = (): JSX.Element => {
   // const handleFocus = () => {}
 
   const {values, touched, errors, handleChange, handleBlur, handleSubmit} = formik
-  console.log(values)
   return (
     <Container>
       <h1>Sign in to Eventio.</h1>

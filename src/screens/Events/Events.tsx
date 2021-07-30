@@ -71,9 +71,7 @@ const EventsPage = () => {
         </ContentWrapper>
 
         <Link to="/create/event">
-          <a>
-            <CreateEventButton iconSrc="/icons/plus.svg" backgroundColor={COLOR.GREY_TEXT_DARK} />
-          </a>
+          <CreateEventButton iconSrc="/icons/plus.svg" backgroundColor={COLOR.GREY_TEXT_DARK} />
         </Link>
       </Container>
     </>

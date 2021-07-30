@@ -29,7 +29,6 @@ const CreateEventForm = (): JSX.Element => {
     validate,
     onSubmit: async ({date, time, capacity, ...values}) => {
       setSubmitting(true)
-      console.log(values, 'values')
       const startsAt = createDate(date, time).toISOString()
       await Api.events.create({...values, startsAt, capacity: Number(capacity)}, getAuthToken())
 
