@@ -36,7 +36,7 @@ const SignInForm = (): JSX.Element => {
         const loginResponse = await Api.auth.signIn(email, password)
         dispatch({type: ACTIONS.LOGIN, user: loginResponse})
 
-        history.push('/events')
+        history.push('/')
       } catch (err) {
         setLoginError(true)
         setLoading(false)

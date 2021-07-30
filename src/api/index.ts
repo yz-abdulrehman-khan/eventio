@@ -1,11 +1,10 @@
 import authApi from './Auth'
 import eventsApi from './Events'
 import Axios from 'axios'
-import {API_URL, API_KEY} from '../utils/config'
 
 export const axios = Axios.create({
-  baseURL: API_URL,
-  headers: {APIKey: API_KEY},
+  baseURL: process.env.REACT_APP_BASE_URL,
+  headers: {APIKey: process.env.REACT_APP_API_URL},
 })
 
 const Api = {
