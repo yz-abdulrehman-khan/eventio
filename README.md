@@ -1,91 +1,98 @@
-# Getting Started with Create React App
+This is a Test Evaluation app by strv recruitment team. Created by [Abdul Rehman Khan](https://github.com/Abdul-Rehman-Khan "Abdul Rehman Khan") using `TypeScript/React.js`.
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Eventio
+A web app that allows registered users to sign up for and create/join events. 
 
-In the project directory, you can run:
 
-### `npm start`
+## System Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- git v2.13 or greater
+- NodeJS 12 || 14 || 15 || 16
+- npm v6 or greater
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+All of these must be available in your PATH. To verify things are set up properly, you can run this:
 
-### `npm test`
+    git --version
+    node --version
+    npm --version
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+## Setup
+    git clone https://github.com/Abdul-Rehman-Khan/eventio.git
+    cd bookshelf
+just run a follwing commands to get set up:
+```shell
+npm install
+npm run validate
+```
+#### Running the app
+```shell
+npm start
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
+## High Level Repo Architecture 
+```rst
+├── public																	# fonts, icons and images
+│   ├── fonts
+│   ├── icons
+│   ├── images
+├── src	
+│   ├── api																   # APIs are defined here
+│   └── components												    # Reuseable Components
+│   ├── context															# Defined a Auth context/state
+│   ├── routes         													 # Application routes
+│   ├── screens         									 			  # App Screens/Containers. 
+│   ├── styles         											 		 # App global styles + constants
+│   ├── utils          												   	# App config + helper functions
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##What is Done ? :joy:
+Till now I have implemented the following features
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+#### Login and Authorized State
+- [x] Login Page UI implementation a/c to designs
+- [x] Login Form Implementation and Validation
+- [x] User is being able to authenticate and authorize using APIs.
+- [x] After logging in, users should be redirected to a list of all events
+- [x] Implement logout functionality
 
-### `npm run eject`
+#### Event List
+- [x] Implement UI according to graphic resources
+- [x] Implement toggle view mode functionality
+- [x] Hook up API
+- [x] List and filter All/Past/Future events
+- [x] Implement JOIN/LEAVE event functionality
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Create Event
+- [x] Implement UI according to graphic resources
+- [x] Implement form functionality + validations
+- [x] Hook up API
 
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+#### 404 Page
+- [x] Implement UI according to graphic resources
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
+##What needs to be done ? :worried:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
+#### Sign Up/User Registration
+- [ ] Implement UI according to graphic resources
+- [ ] Implement form functionality + validations
+- [ ] Hook up API
 
-## Learn More
+I have used Formik to Implement Forms, do check out my Implementation for Login to get some idea and dont forget to wrap your component with `<CoverImageLayout />`.
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Event Details
+- [ ] Create page/layout a/c to the designs
+- [ ] Hook up API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###My Profile
+- [ ] Create page/layout a/c to the designs
+- [ ] Hook up API
 
-### Code Splitting
+PRO Tip: Get basic user information form `context/authContext `
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Queries ?
+Reach out to me I will be more than happy to help you out.
+`email : yz.abdulrehman.khan@gmail.com`
 
-### Analyzing the Bundle Size
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
