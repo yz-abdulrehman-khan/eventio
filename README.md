@@ -33,21 +33,20 @@ npm start
 
 ## High Level Repo Architecture 
 ```rst
-├── public																	# fonts, icons and images
+├── public            # fonts, icons and images
 │   ├── fonts
 │   ├── icons
 │   ├── images
 ├── src	
-│   ├── api																   # APIs are defined here
-│   └── components												    # Reuseable Components
-│   ├── context															# Defined a Auth context/state
-│   ├── routes         													 # Application routes
-│   ├── screens         									 			  # App Screens/Containers. 
-│   ├── styles         											 		 # App global styles + constants
-│   ├── utils          												   	# App config + helper functions
+│   ├── api           # APIs are defined here
+│   └── components    # Reuseable Components
+│   ├── context       # Defined a Auth context/state
+│   ├── routes        # Application routes
+│   ├── screens       # App Screens/Containers. 
+│   ├── styles        # App global styles + constants
+│   ├── utils         # App config + helper functions
 ```
-
-##What is Done ? :joy:
+## What's Done ? 
 Till now I have implemented the following features
 
 #### Login and Authorized State
@@ -72,7 +71,7 @@ Till now I have implemented the following features
 #### 404 Page
 - [x] Implement UI according to graphic resources
 
-##What needs to be done ? :worried:
+## What needs to be done ?
 
 #### Sign Up/User Registration
 - [ ] Implement UI according to graphic resources
@@ -85,7 +84,7 @@ I have used Formik to Implement Forms, do check out my Implementation for Login 
 - [ ] Create page/layout a/c to the designs
 - [ ] Hook up API
 
-###My Profile
+#### User Profile
 - [ ] Create page/layout a/c to the designs
 - [ ] Hook up API
 
