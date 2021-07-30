@@ -46,7 +46,7 @@ npm start
 │   ├── styles        # App global styles + constants
 │   ├── utils         # App config + helper functions
 ```
-## What's Done ? 
+## What's Done ? 🚀
 Till now I have implemented the following features
 
 #### Login and Authorized State
@@ -71,7 +71,7 @@ Till now I have implemented the following features
 #### 404 Page
 - [x] Implement UI according to graphic resources
 
-## What needs to be done ?
+## What needs to be done ? 👷‍♂️
 
 #### Sign Up/User Registration
 - [ ] Implement UI according to graphic resources
@@ -89,6 +89,22 @@ I have used Formik to Implement Forms, do check out my Implementation for Login 
 - [ ] Hook up API
 
 PRO Tip: Get basic user information form `context/authContext `
+
+#### Issues ⚠️
+There are some issues that need be addressed before getting started with the project, I haven't looked at them due to time constraints.
+
+- [ ] Console logging a warning saying `warning: React has detected a change in the order of Hooks called by AuthProvider` after Login event.
+  This warning may lead to bugs, as it may be breaking some rules for hooks, following links may be helpful 
+```rst
+https://reactjs.org/link/rules-of-hooks
+https://stackoverflow.com/questions/57397395/react-has-detected-a-change-in-the-order-of-hooks-but-hooks-seem-to-be-invoked.
+```
+- [ ] There is a bit prop drilling in `screens/Events/Events.tsx` component, it should be solved via context API & a custom hook. 
+  attaching a link that may be helpful
+```rst
+https://kentcdodds.com/blog/how-to-use-react-context-effectively
+https://kentcdodds.com/blog/application-state-management-with-react  
+```
 
 ## Queries ?
 Reach out to me I will be more than happy to help you out.
