@@ -105,6 +105,7 @@ https://stackoverflow.com/questions/57397395/react-has-detected-a-change-in-the-
 https://kentcdodds.com/blog/how-to-use-react-context-effectively
 https://kentcdodds.com/blog/application-state-management-with-react  
 ```
+- [ ] There are some issues in the deployed link, start script is now `node server.js` due to heroku deployment. When the browser url contains a path like `https://eventio-yz.herokuapp.com/events` and you refresh it, then it says `Cannot GET /events`, I want to debug this but one due to time constraints I am not able to look into this. if you change start script to `react-scripts start` it should work fine you can check that on local on the `dev` branch. 
 
 ## Queries ?
 Reach out to me I will be more than happy to help you out.
