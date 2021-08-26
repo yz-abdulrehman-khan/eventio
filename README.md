@@ -1,4 +1,4 @@
-This is a Test Evaluation app by strv recruitment team. Created by [Abdul Rehman Khan](https://github.com/Abdul-Rehman-Khan "Abdul Rehman Khan") using `TypeScript/React.js`.
+Event Management Solution. Created by [Abdul Rehman Khan](https://github.com/Abdul-Rehman-Khan "Abdul Rehman Khan") using `TypeScript/React.js`.
 
 
 ## Eventio
