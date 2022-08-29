@@ -1,4 +1,4 @@
-Created by [Abdul Rehman Khan](https://github.com/Abdul-Rehman-Khan "Abdul Rehman Khan") using `TypeScript/React.js`.
+Created by [Abdul Rehman Khan](https://github.com/yz-abdulrehman-khan "Abdul Rehman Khan") using `TypeScript/React.js`.
 
 
 ## Eventio
